@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { ApiService } from 'src/app/services/api.service';
 
 @Component({
   selector: 'app-home',
@@ -9,9 +10,16 @@ export class HomeComponent implements OnInit {
 
   emailVisible = false;
 
-  constructor() { }
+  stat: any;
 
-  ngOnInit(): void {
+  constructor(
+    public apiService: ApiService,
+  ) { }
+
+  async ngOnInit(): Promise<void> {
+    this.stat = await this.apiService.getStats();
+
+    console.log(this.stat);
   }
 
   afficheEmail() {
