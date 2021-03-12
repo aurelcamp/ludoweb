@@ -1,4 +1,3 @@
-
 <div>
   <img class="background-img" src="./assets/images/games.jpg" alt="game">
 </div>
@@ -12,12 +11,19 @@
 <div *ngIf="emailVisible"><input type="text"><button type="button" class="btn btn-primary">Inscription a la newsletter</button></div>
 </div> 
 <h2>Ludoweb en quelques chiffres</h2>
-<p>1 prêts de jeux effectués</p>
-<p>1 ludothèques</p>
-<p>1 utilisateurs</p>
-<p>4 jeux enregistrés</p>
-<p>4 jeux par utilisateur en moyenne</p>
-<p>4 catégories différentes : <br>Puzzle, Jeu de plateau, Jeu de dés, Jeu de cartes</p>
+<p>{{stat?.nbLoans}} prêts de jeux effectués</p>
+<p>{{stat?.nbManagers}} ludothèques</p>
+<p>{{stat?.nbUsers}} utilisateurs</p>
+<p>{{stat?.nbGames}} jeux enregistrés</p>
+<p>{{stat?.nbGames / stat?.nbUsers}} jeux par utilisateur en moyenne</p>
+<p>{{stat?.categories.length}} catégories différentes : 
+  
+   <span *ngFor="let item of stat?.categories">
+       {{ item }},</span>    
+      
+
+  
+</p>
 
 
 <h3>Les témoignages</h3>
