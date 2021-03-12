@@ -1,3 +1,4 @@
+
 <div>
   <img class="background-img" src="./assets/images/games.jpg" alt="game">
 </div>
@@ -6,12 +7,18 @@
 <div class="div1">
   <h1>Ludoweb</h1>
    <p>Prétez et empruntez des jeux de société.</p>
-   <button type="button" class="btn btn-primary">Je souhaite recevoir la newsletter</button>
+<div *ngIf="!emailVisible"><button type="button" class="btn btn-primary"(click)="afficheEmail()" >Je souhaite recevoir la newsletter</button></div>
+<!-- <button class="btn btn-primary" (click)="toggle()" *ngIf="room.description"></button> -->
+<div *ngIf="emailVisible"><input type="text"><button type="button" class="btn btn-primary">Inscription a la newsletter</button></div>
 </div> 
-<h1>Ludoweb en quelques chiffres</h1>
-<p>prêts de jeux effectués</p>
-<p>ludothèques</p>
-<p>utilisateurs</p>
-<p>jeux enregistrés</p>
-<p>jeux par utilisateur en moyenne</p>
+<h2>Ludoweb en quelques chiffres</h2>
+<p>1 prêts de jeux effectués</p>
+<p>1 ludothèques</p>
+<p>1 utilisateurs</p>
+<p>4 jeux enregistrés</p>
+<p>4 jeux par utilisateur en moyenne</p>
+<p>4 catégories différentes : <br>Puzzle, Jeu de plateau, Jeu de dés, Jeu de cartes</p>
+
+
+<h3>Les témoignages</h3>
 </div>
